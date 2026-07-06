@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Landing page para cafetera Makita."
+    />
+    <title>Cafetera Makita</title>
+    <link rel="stylesheet" href="./src/css/main.css" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="Navegacion principal">
+      <a class="site-header__brand" href="#inicio" aria-label="Makita">
+        <img src="../assets/logo makita.svg" alt="Makita" />
+      </a>
+
+      <nav class="site-nav" aria-label="Secciones">
+        <a class="site-nav__link site-nav__link--active" href="#inicio">Inicio</a>
+        <a class="site-nav__link" href="#beneficios">Beneficios</a>
+        <a class="site-nav__link" href="#caracteristicas">Caracteristicas</a>
+        <a class="site-nav__link" href="#componentes">Componentes</a>
+        <a class="site-nav__link" href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <main id="inicio">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__inner">
+          <div class="hero__content">
+            <h1 class="hero__title" id="hero-title">
+              <span class="hero__title-line">Café caliente,</span>
+              <span class="hero__title-line">dónde sea</span>
+            </h1>
+            <p class="hero__text">
+              La cafetera que siempre va a estar lista para acompañarte.
+            </p>
+            <a class="button button--primary" href="#beneficios">Ver más</a>
+          </div>
+
+          <div class="hero__media" aria-hidden="true">
+            <img
+              class="hero__product"
+              src="../assets/imagen principal.png"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <ul class="hero-features" aria-label="Beneficios principales">
+          <li class="hero-feature">
+            <img src="../assets/icono llave.svg" alt="" />
+            <span>Trabajar</span>
+          </li>
+          <li class="hero-feature">
+            <img src="../assets/icono tilde.svg" alt="" />
+            <span>Resistente</span>
+          </li>
+          <li class="hero-feature">
+            <img src="../assets/icono valija.svg" alt="" />
+            <span>Portátil</span>
+          </li>
+          <li class="hero-feature">
+            <img src="../assets/icono bateria.svg" alt="" />
+            <span>Batería</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="places" id="beneficios" aria-labelledby="places-title">
+        <div class="section-heading">
+          <h2 class="section-heading__title" id="places-title">
+            <span>Apta para</span> todo lugar
+          </h2>
+        </div>
+
+        <div class="places__grid">
+          <article class="place-card">
+            <img
+              class="place-card__image"
+              src="../assets/encuadre manija.png"
+              alt="Manija superior de la cafetera Makita"
+            />
+            <h3 class="place-card__title">Transportable</h3>
+            <p class="place-card__text">Manija integrada</p>
+          </article>
+
+          <article class="place-card">
+            <img
+              class="place-card__image"
+              src="../assets/encuadre makita.png"
+              alt="Detalle frontal de cafetera Makita"
+            />
+            <h3 class="place-card__title">Compatible</h3>
+            <p class="place-card__text">Baterías Makita</p>
+          </article>
+
+          <article class="place-card">
+            <img
+              class="place-card__image"
+              src="../assets/encuadre bateria.png"
+              alt="Batería conectada a la cafetera Makita"
+            />
+            <h3 class="place-card__title">Sin enchufes</h3>
+            <p class="place-card__text">Funciona a batería</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="work-break" id="caracteristicas" aria-label="Pausa en la jornada">
+        <div class="work-break__content">
+          <p class="work-break__text">
+            Una pausa que<br />
+            impulsa tu jornada
+          </p>
+        </div>
+      </section>
+
+      <section class="components" id="componentes" aria-labelledby="components-title">
+        <div class="section-heading">
+          <h2 class="section-heading__title" id="components-title">
+            Conocé sus componentes
+          </h2>
+        </div>
+
+        <div class="components__inner">
+          <div class="components__image-wrap">
+            <img
+              class="components__image"
+              src="../assets/imagen makita desarmada.png"
+              alt="Cafetera Makita desarmada con sus componentes"
+            />
+            <span class="component-marker component-marker--1">1</span>
+            <span class="component-marker component-marker--2">2</span>
+            <span class="component-marker component-marker--3">3</span>
+            <span class="component-marker component-marker--4">4</span>
+            <span class="component-marker component-marker--5">5</span>
+          </div>
+
+          <ol class="components-list" aria-label="Componentes de la cafetera">
+            <li class="component-item" data-component="1">
+              <span class="component-item__number">1</span>
+              <span>
+                <strong>Tapa superior</strong>
+                <small>Protege el depósito de agua</small>
+              </span>
+            </li>
+            <li class="component-item" data-component="2">
+              <span class="component-item__number">2</span>
+              <span>
+                <strong>Filtro permanente</strong>
+                <small>Filtro reutilizable y extraíble</small>
+              </span>
+            </li>
+            <li class="component-item" data-component="3">
+              <span class="component-item__number">3</span>
+              <span>
+                <strong>Depósito de agua</strong>
+                <small>Fácil de extraer y llenar</small>
+              </span>
+            </li>
+            <li class="component-item" data-component="4">
+              <span class="component-item__number">4</span>
+              <span>
+                <strong>Taza de acero</strong>
+                <small>Capacidad de 240ml</small>
+              </span>
+            </li>
+            <li class="component-item" data-component="5">
+              <span class="component-item__number">5</span>
+              <span>
+                <strong>Soporte de batería</strong>
+                <small>Compatible con baterías Makita</small>
+              </span>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="compatibility" aria-labelledby="compatibility-title">
+        <div class="section-heading">
+          <h2 class="section-heading__title" id="compatibility-title">
+            Doble compatibilidad
+          </h2>
+        </div>
+
+        <div class="compatibility__inner">
+          <div class="compatibility__content">
+            <div class="compatibility-tabs" aria-label="Tipos de batería compatibles">
+              <button class="compatibility-tab" type="button">
+                <span>LXT 18V</span>
+                <img src="../assets/icono flecha.svg" alt="" />
+              </button>
+              <button class="compatibility-tab" type="button">
+                <span>CXT 12V Max</span>
+                <img src="../assets/icono flecha.svg" alt="" />
+              </button>
+            </div>
+
+            <p class="compatibility__text">
+              Compatible con los sistemas CXT de 12V Max y LXT de 18V. Elegí
+              la batería que ya forma parte de tus herramientas Makita.
+            </p>
+
+            <div class="battery-options" aria-label="Baterías compatibles">
+              <figure class="battery-option">
+                <figcaption>LXT 18V</figcaption>
+                <img src="../assets/bateria lxt.png" alt="Batería Makita LXT 18V" />
+              </figure>
+              <figure class="battery-option">
+                <figcaption>CXT 12V Max</figcaption>
+                <img src="../assets/bateria cxt.png" alt="Batería Makita CXT 12V Max" />
+              </figure>
+            </div>
+          </div>
+
+          <div class="compatibility__image-wrap">
+            <img
+              class="compatibility__image"
+              src="../assets/encuadre makita cuadrado.png"
+              alt="Detalle de batería conectada a cafetera Makita"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="teamwork" aria-label="Herramientas Makita en equipo">
+        <div class="teamwork__content">
+          <p class="teamwork__text">
+            Hechas para<br />
+            trabajar en equipo
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script src="./src/js/main.js" defer></script>
+  </body>
+</html>

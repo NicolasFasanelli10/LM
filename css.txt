@@ -1,0 +1,815 @@
+main {
+  min-height: 100vh;
+}
+
+.site-header {
+  position: absolute;
+  top: 34px;
+  left: 50%;
+  z-index: 10;
+  display: flex;
+  width: var(--content-width);
+  max-width: var(--page-max-width);
+  align-items: center;
+  justify-content: space-between;
+  transform: translateX(-50%);
+}
+
+.site-header__brand {
+  display: inline-flex;
+  width: 74px;
+}
+
+.site-header__brand img {
+  filter: brightness(0) invert(1);
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  color: var(--color-white);
+  font-size: 9px;
+  font-weight: 500;
+}
+
+.site-nav__link {
+  position: relative;
+  opacity: 0.92;
+  transition: color 160ms ease;
+}
+
+.site-nav__link--active {
+  color: var(--color-blue);
+}
+
+.site-nav__link--active::after {
+  position: absolute;
+  right: 0;
+  bottom: -6px;
+  left: 0;
+  height: 0.5pt;
+  background: var(--color-white);
+  content: "";
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  min-height: 835px;
+  overflow: hidden;
+  padding: 124px 0 88px;
+  background:
+    radial-gradient(ellipse at 69% 25%, rgba(8, 127, 186, 0.62) 0 9%, rgba(8, 127, 186, 0.34) 20%, rgba(8, 127, 186, 0.08) 36%, transparent 50%),
+    linear-gradient(90deg, rgba(7, 10, 12, 1) 0%, rgba(7, 10, 12, 0.98) 38%, rgba(7, 10, 12, 0.72) 58%, rgba(7, 10, 12, 0.94) 78%, rgba(7, 10, 12, 1) 100%),
+    linear-gradient(180deg, rgba(7, 10, 12, 0.98), rgba(7, 10, 12, 1));
+}
+
+.hero::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(7, 10, 12, 0.5), rgba(7, 10, 12, 0.68)),
+    url("../../../../assets/textura fondo.png") center top / cover no-repeat;
+  content: "";
+  opacity: 0.46;
+  mix-blend-mode: multiply;
+}
+
+.hero::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background: linear-gradient(180deg, transparent 0 72%, var(--color-black) 100%);
+}
+
+.hero__inner,
+.hero-features {
+  position: relative;
+  z-index: 1;
+  width: var(--content-width);
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  min-height: 430px;
+}
+
+.hero__content {
+  padding-top: 36px;
+}
+
+.hero__title {
+  margin: 0;
+  color: var(--color-blue);
+  background: linear-gradient(var(--gradient-angle), var(--color-white) 0%, #79c9ed 36%, var(--color-blue) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-family: var(--font-display);
+  font-size: clamp(46px, 6.35vw, 66px);
+  font-weight: 400;
+  letter-spacing: 0.035em;
+  line-height: 0.98;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+}
+
+.hero__title-line {
+  display: block;
+  white-space: nowrap;
+}
+
+.hero__text {
+  max-width: 275px;
+  margin: 26px 0 18px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.hero__media {
+  display: flex;
+  justify-content: center;
+}
+
+.hero__product {
+  width: min(100%, 503px);
+}
+
+.hero-features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 68px;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-feature {
+  position: relative;
+  display: grid;
+  min-height: 91px;
+  place-items: center;
+  align-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  border-radius: 5px;
+  background: linear-gradient(var(--gradient-angle), rgba(255, 255, 255, 0.14) 0%, rgba(26, 28, 29, 0.98) 34%, rgba(7, 10, 12, 0.98) 100%);
+  gap: 8px;
+  transition: background 180ms ease, border-color 180ms ease;
+}
+
+.hero-feature:hover {
+  border-color: rgba(255, 255, 255, 0.38);
+  background: var(--gradient-blue-dark);
+}
+
+.hero-feature img {
+  width: 40px;
+  height: 40px;
+  filter: brightness(0) invert(1);
+  object-fit: contain;
+}
+
+.hero-feature span {
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    top: 22px;
+    align-items: flex-start;
+    gap: 22px;
+  }
+
+  .site-nav {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px 16px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 98px 0 56px;
+  }
+
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    text-align: center;
+  }
+
+  .hero__content {
+    display: grid;
+    justify-items: center;
+    padding-top: 0;
+  }
+
+  .hero__text {
+    margin-top: 18px;
+  }
+
+  .hero__product {
+    max-width: 370px;
+  }
+
+  .hero-features {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 38px;
+  }
+}
+
+@media (max-width: 430px) {
+  :root {
+    --content-width: min(100% - 28px, var(--page-max-width));
+  }
+
+  .site-header {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: var(--content-width);
+    margin: 18px auto -72px;
+    transform: none;
+  }
+
+  .site-header__brand {
+    width: 64px;
+  }
+
+  .site-nav {
+    font-size: 8px;
+    gap: 8px 12px;
+  }
+
+  .hero {
+    padding-top: 96px;
+  }
+
+  .hero-features {
+    gap: 8px;
+  }
+}
+
+.places {
+  position: relative;
+  overflow: hidden;
+  padding: 62px 0 118px;
+  background:
+    linear-gradient(90deg, rgba(8, 127, 186, 0.16) 0%, transparent 38%, rgba(7, 10, 12, 0.96) 100%),
+    linear-gradient(180deg, var(--color-black) 0%, #071015 52%, var(--color-black) 100%);
+}
+
+.places::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(7, 10, 12, 0.72), rgba(7, 10, 12, 0.78)),
+    url("../../../../assets/textura fondo.png") center -250px / cover no-repeat;
+  content: "";
+  opacity: 0.42;
+  mix-blend-mode: multiply;
+}
+
+.section-heading,
+.places__grid {
+  position: relative;
+  z-index: 1;
+  width: var(--content-width);
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+}
+
+.section-heading {
+  display: grid;
+  justify-items: center;
+}
+
+.section-heading__title {
+  position: relative;
+  margin: 0;
+  color: var(--color-blue);
+  background: linear-gradient(var(--gradient-angle), var(--color-white) 0%, #79c9ed 36%, var(--color-blue) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: center;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+}
+
+.section-heading__title span {
+  color: inherit;
+}
+
+.section-heading__title::after {
+  display: block;
+  width: 364px;
+  max-width: 88vw;
+  height: 1px;
+  margin: 18px auto 0;
+  background: rgba(255, 255, 255, 0.28);
+  content: "";
+}
+
+.places__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 64px;
+  margin-top: 45px;
+}
+
+.place-card {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.place-card__image {
+  width: 244px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.place-card__title {
+  margin: 20px 0 0;
+  color: var(--color-white);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.place-card__text {
+  margin: 5px 0 0;
+  color: var(--color-white);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1;
+  opacity: 0.92;
+}
+
+@media (max-width: 760px) {
+  .places {
+    padding: 54px 0 76px;
+  }
+
+  .section-heading__title {
+    font-size: 30px;
+  }
+
+  .places__grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .place-card__image {
+    width: min(244px, 72vw);
+  }
+}
+
+.work-break {
+  position: relative;
+  min-height: 423px;
+  overflow: hidden;
+  background: url("../../../../assets/imagen obrero sin texto.png") center / calc(100% + 64px) auto no-repeat;
+}
+
+.work-break__content {
+  position: relative;
+  display: flex;
+  width: var(--content-width);
+  max-width: var(--page-max-width);
+  min-height: 423px;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0 auto;
+}
+
+.work-break__text {
+  max-width: 260px;
+  margin: 28px 3px 0 0;
+  color: var(--color-white);
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.04;
+  text-align: left;
+}
+
+@media (max-width: 760px) {
+  .work-break {
+    min-height: 340px;
+    background-position: 42% center;
+    background-size: auto 100%;
+  }
+
+  .work-break__content {
+    min-height: 340px;
+    align-items: flex-end;
+    padding-bottom: 46px;
+  }
+
+  .work-break__text {
+    margin-right: 0;
+    font-size: 18px;
+  }
+}
+
+.components {
+  position: relative;
+  overflow: hidden;
+  padding: 126px 0 120px;
+  background:
+    radial-gradient(ellipse at 20% 22%, rgba(8, 127, 186, 0.3) 0 12%, rgba(8, 127, 186, 0.1) 32%, transparent 56%),
+    linear-gradient(90deg, rgba(8, 127, 186, 0.18) 0%, rgba(7, 10, 12, 0.98) 50%, rgba(7, 10, 12, 1) 100%),
+    var(--color-black);
+}
+
+.components::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(7, 10, 12, 0.68), rgba(7, 10, 12, 0.78)),
+    url("../../../../assets/textura fondo.png") center top / cover no-repeat;
+  content: "";
+  opacity: 0.44;
+  mix-blend-mode: multiply;
+}
+
+.components__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: var(--content-width);
+  max-width: var(--page-max-width);
+  grid-template-columns: 1.12fr 0.88fr;
+  align-items: center;
+  gap: 42px;
+  margin: 54px auto 0;
+}
+
+.components__image-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  transform: translateX(-24px);
+}
+
+.components__image {
+  width: min(138%, 640px);
+  max-width: none;
+}
+
+.component-marker {
+  position: absolute;
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 50%;
+  background: rgba(7, 10, 12, 0.9);
+  color: var(--color-white);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.component-marker--1 {
+  top: 12%;
+  left: 42%;
+}
+
+.component-marker--2 {
+  top: 28%;
+  right: 23%;
+}
+
+.component-marker--3 {
+  top: 30%;
+  left: 18%;
+}
+
+.component-marker--4 {
+  top: 51.5%;
+  right: 13%;
+}
+
+.component-marker--5 {
+  top: 61%;
+  left: 21%;
+}
+
+.components:has(.component-item[data-component="1"]:hover) .component-marker--1,
+.components:has(.component-item[data-component="2"]:hover) .component-marker--2,
+.components:has(.component-item[data-component="3"]:hover) .component-marker--3,
+.components:has(.component-item[data-component="4"]:hover) .component-marker--4,
+.components:has(.component-item[data-component="5"]:hover) .component-marker--5,
+.component-marker:hover {
+  border-color: rgba(255, 255, 255, 0.9);
+  background: var(--color-blue);
+  box-shadow: 0 0 14px rgba(8, 127, 186, 0.55);
+}
+
+.components-list {
+  display: grid;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.component-item {
+  display: grid;
+  min-height: 94px;
+  grid-template-columns: 48px 1fr;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 4px;
+  background: linear-gradient(var(--gradient-angle), rgba(255, 255, 255, 0.12) 0%, rgba(23, 25, 26, 0.98) 38%, rgba(7, 10, 12, 0.98) 100%);
+  padding: 0 20px;
+  transition: background 180ms ease, border-color 180ms ease;
+}
+
+.component-item:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: var(--gradient-blue-dark);
+}
+
+.components:has(.component-marker--1:hover) .component-item[data-component="1"],
+.components:has(.component-marker--2:hover) .component-item[data-component="2"],
+.components:has(.component-marker--3:hover) .component-item[data-component="3"],
+.components:has(.component-marker--4:hover) .component-item[data-component="4"],
+.components:has(.component-marker--5:hover) .component-item[data-component="5"] {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: var(--gradient-blue-dark);
+}
+
+.component-item:hover .component-item__number,
+.components:has(.component-marker--1:hover) .component-item[data-component="1"] .component-item__number,
+.components:has(.component-marker--2:hover) .component-item[data-component="2"] .component-item__number,
+.components:has(.component-marker--3:hover) .component-item[data-component="3"] .component-item__number,
+.components:has(.component-marker--4:hover) .component-item[data-component="4"] .component-item__number,
+.components:has(.component-marker--5:hover) .component-item[data-component="5"] .component-item__number {
+  border-color: rgba(255, 255, 255, 0.9);
+  background: var(--color-blue);
+  box-shadow: 0 0 14px rgba(8, 127, 186, 0.55);
+}
+
+.component-item__number {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border: 2px solid var(--color-white);
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+  transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.component-item strong,
+.component-item small {
+  display: block;
+}
+
+.component-item strong {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.component-item small {
+  margin-top: 4px;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+@media (max-width: 760px) {
+  .components {
+    padding: 78px 0 86px;
+  }
+
+  .components__inner {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .components__image-wrap {
+    transform: none;
+  }
+
+  .components__image {
+    width: min(100%, 430px);
+    max-width: 430px;
+  }
+
+  .component-item {
+    min-height: 82px;
+  }
+}
+
+.compatibility {
+  position: relative;
+  overflow: hidden;
+  padding: 86px 0 116px;
+  background:
+    radial-gradient(ellipse at 78% 46%, rgba(8, 127, 186, 0.36) 0 14%, rgba(8, 127, 186, 0.12) 35%, transparent 58%),
+    linear-gradient(90deg, rgba(7, 10, 12, 1) 0%, rgba(7, 10, 12, 0.96) 45%, rgba(8, 127, 186, 0.2) 100%),
+    var(--color-black);
+}
+
+.compatibility::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(7, 10, 12, 0.72), rgba(7, 10, 12, 0.82)),
+    url("../../../../assets/textura fondo.png") center top / cover no-repeat;
+  content: "";
+  opacity: 0.42;
+  mix-blend-mode: multiply;
+}
+
+.compatibility__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: var(--content-width);
+  max-width: var(--page-max-width);
+  grid-template-columns: 1.04fr 0.96fr;
+  gap: 82px;
+  margin: 46px auto 0;
+}
+
+.compatibility__content {
+  padding-top: 4px;
+}
+
+.compatibility-tabs {
+  display: grid;
+  gap: 14px;
+}
+
+.compatibility-tab {
+  display: flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 4px;
+  background: linear-gradient(var(--gradient-angle), rgba(255, 255, 255, 0.12) 0%, rgba(23, 25, 26, 0.98) 38%, rgba(7, 10, 12, 0.98) 100%);
+  color: var(--color-white);
+  cursor: pointer;
+  padding: 0 28px;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: left;
+  transition: background 180ms ease, border-color 180ms ease;
+}
+
+.compatibility-tab:hover {
+  border-color: rgba(255, 255, 255, 0.38);
+  background: var(--gradient-blue-dark);
+}
+
+.compatibility-tab img {
+  width: 24px;
+  filter: brightness(0) invert(1);
+}
+
+.compatibility__text {
+  max-width: 378px;
+  margin: 14px 0 22px;
+  color: var(--color-white);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.battery-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 54px;
+  align-items: end;
+  margin-top: 28px;
+  overflow: visible;
+}
+
+.battery-option {
+  margin: 0;
+}
+
+.battery-option figcaption {
+  display: grid;
+  justify-items: center;
+  gap: 9px;
+  margin-bottom: 16px;
+  color: var(--color-blue);
+  font-size: 11px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.battery-option figcaption::after {
+  width: 54px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.75);
+  content: "";
+}
+
+.battery-option img {
+  width: 150%;
+  max-width: none;
+  transform: translateX(-16%);
+}
+
+.compatibility__image-wrap {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.compatibility__image {
+  width: min(100%, 385px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  object-fit: cover;
+}
+
+@media (max-width: 760px) {
+  .compatibility {
+    padding: 76px 0 86px;
+  }
+
+  .compatibility__inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .compatibility__image {
+    max-width: 320px;
+  }
+}
+
+.teamwork {
+  position: relative;
+  min-height: 423px;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(7, 10, 12, 0.82) 0%, rgba(7, 10, 12, 0.38) 30%, rgba(7, 10, 12, 0.08) 58%, rgba(7, 10, 12, 0.32) 100%),
+    url("../../../../assets/imagen herramientas makita.png") center / calc(100% + 64px) auto no-repeat;
+}
+
+.teamwork__content {
+  display: flex;
+  width: var(--content-width);
+  max-width: var(--page-max-width);
+  min-height: 423px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.teamwork__text {
+  max-width: 220px;
+  margin: 10px 0 0;
+  color: var(--color-white);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.08;
+}
+
+@media (max-width: 760px) {
+  .teamwork {
+    min-height: 340px;
+    background-position: 58% center;
+    background-size: auto 100%;
+  }
+
+  .teamwork__content {
+    min-height: 340px;
+    align-items: flex-end;
+    padding-bottom: 46px;
+  }
+
+  .teamwork__text {
+    font-size: 18px;
+  }
+}
